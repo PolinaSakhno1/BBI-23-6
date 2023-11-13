@@ -51,17 +51,17 @@ class Program
 
 
         //2.1
-        double sr, r, s = 0;
-        int n = 0;
+        double sr21, r21, s21 = 0;
+        int n21 = 0;
         do
         {
             Console.WriteLine($"Введите рост ученика или 0"); ;
-            r = double.Parse(Console.ReadLine());
-            if (r == 0) break;
-            s = s + r; n = n + 1;
+            r21 = double.Parse(Console.ReadLine());
+            if (r21 == 0) break;
+            s21 = s21 + r21; n21 = n21 + 1;
         } 
-        while (r > 0);
-        sr = s / n;
+        while (r21 > 0);
+        sr = s21 / n21;
         {
             Console.WriteLine(sr);
         }
@@ -71,60 +71,60 @@ class Program
         //2.4
       
 
-        double x, y, r1, r2;
-        int i, n, k;
+        double x24, y24, 24r1, 24r2;
+        int i24, n24, k24;
         Console.WriteLine("Введите количество точек");
-        n = int.Parse(Console.ReadLine());
+        n24 = int.Parse(Console.ReadLine());
         Console.WriteLine("Введите радиус1");
-        r1 = double.Parse(Console.ReadLine());
+        24r1 = double.Parse(Console.ReadLine());
         Console.WriteLine("Введите радиус2");
-        r2 = double.Parse(Console.ReadLine());
-        k = 0；
-        for (i = 1; i <= n; i++)
+        24r2 = double.Parse(Console.ReadLine());
+        k24 = 0；
+        for (i24 = 1; i24 <= n24; i24++)
         {
             Console.WriteLine("Введите ×");
-            x = double.Parse(Console.ReadLine());
+            x24 = double.Parse(Console.ReadLine());
             Console.WriteLine("Введите у");
-            y = double.Parse(Console.ReadLine());
+            y24 = double.Parse(Console.ReadLine());
 
     
-            double g = Math.Sqrt(x * x + y * y);
+            double g24 = Math.Sqrt(x24 * x24 + y24 * y24);
 
-            if (g <= r1 && g >= r2)
+            if (g24 <= 24r1 && g24 >= 24r2)
             {
-                K++;
+                k24++;
             }
         }
 
         {
-            Console.WriteLine($"{K}"); 
+            Console.WriteLine($"{k24}"); 
         }
         //2.7
         Console.Write("Введите количество точек: ");
-        int n = Convert.ToInt32(Console.ReadLine());
-        int u1 = 0;
-        int u2 = 0;
-        for (int i = 0; i < n; i++)
+        int n27 = Convert.ToInt32(Console.ReadLine());
+        int 27u1 = 0;
+        int 27u2 = 0;
+        for (int i27 = 0; i27 < n27; i27++)
         {
-            Console.WriteLine($" {i + 1}: ");
+            Console.WriteLine($" {i27 + 1}: ");
             Console.Write($"x: ");
-            double x = Convert.ToDouble(Console.ReadLine());
+            double x27 = Convert.ToDouble(Console.ReadLine());
             Console.Write($"y: ");
-            double y = Convert.ToDouble(Console.ReadLine());
-            if (x > 0 && y > 0)
+            double y27 = Convert.ToDouble(Console.ReadLine());
+            if (x27 > 0 && y27 > 0)
             {
                 Console.WriteLine($"в 1 кв ");
-                u1++;
+                27u1++;
             }
-            else if (x < 0 && y < 0)
+            else if (x27 < 0 && y27 < 0)
             {
                 Console.WriteLine($"в 3 кв");
-                u2++;
+                27u2++;
             }
         }
 
-        Console.WriteLine($"кол 1: {u1}");
-        Console.WriteLine($"кол 2: {u2}");
+        Console.WriteLine($"кол 1: {27u1}");
+        Console.WriteLine($"кол 2: {27u2}");
     }
 }
 
