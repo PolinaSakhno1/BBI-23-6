@@ -1,0 +1,635 @@
+﻿using System;
+//1 уровень 2 задача
+class Program
+{
+    static void Main(string[] args)
+    {
+        int[,] matrix12 = new int[5, 7];
+        for (int i = 0; i < 5; i++)
+            for (int j = 0; j < 7; j++)
+            {
+                string s = Console.ReadLine();
+                matrix12[i, j] = int.Parse(s);
+            }
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < 7; j++)
+                Console.Write("{0:d} ", matrix12[i, j]);
+            Console.WriteLine();
+        }
+        double sum12 = 0;
+        int t12 = 0;
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < 7; j++)
+            {
+                if (matrix12[i, j] > 0)
+                {
+                    sum12 += matrix12[i, j];
+                    t12 += 1;
+                }
+            }
+        }
+        double sr12 = sum12 / t12;
+        Console.WriteLine("Среднее арифметическое матрицы: ");
+        Console.WriteLine(sr12);
+        //1 уровень 6 задача
+        Console.WriteLine("Введите двумерный массив:");
+        double[,] matrix14 = new double[4, 7];
+        int[] array14 = new int[4];
+        double min, elm;
+        for (int i = 0; i < 4; i++)
+        {
+            min = 100000000;
+            for (int j = 0; j < 7; j++)
+            {
+                Console.WriteLine("[" + i + "," + j + "]");
+                elm = Double.Parse(Console.ReadLine());
+                matrix14[i, j] = elm;
+                if (elm < min)
+                {
+                    min = elm;
+                    array14[i] = j;
+                }
+            }
+        }
+        Console.WriteLine();
+        for (int i = 0; i < 4; i++)
+        {
+            Console.WriteLine(array14[i] + " ");
+        }
+        //1 уровень 10 задача
+        int[,] matrix112 = new int[5, 7];
+        Random num112 = new Random();
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < 7; j++)
+            {
+                matrix112[i, j] = num112.Next(100);
+            }
+        }
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < 7; j++)
+            {
+                Console.Write(matrix112[i, j] + "\t112");
+            }
+            Console.WriteLine();
+        }
+        int t112 = 2;
+        int amax112 = matrix112[0, t112];
+        int imax112 = 0;
+        for (int i = 1; i < 5; i++)
+        {
+            if (matrix112[i, t112] > amax112)
+            {
+                amax112 = matrix112[i, t112];
+                imax112 = i;
+            }
+        }
+        Console.WriteLine("Максимальный элемент 3 столбца:");
+        Console.WriteLine(amax112);
+        for (int j = 0; j < 7; j++)
+        {
+            int d = matrix112[imax112, j];
+            matrix112[imax112, j] = matrix112[3, j];
+            matrix112[3, j] = d;
+        }
+        Console.WriteLine("Матрица после замены строк:");
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < 7; j++)
+            {
+                Console.Write("{0:d} ", matrix112[i, j]);
+            }
+            Console.WriteLine();
+        }
+        //1 уровень  14задача
+        int[,] matrix114 = new int[4, 3];
+        int[] array114 = new int[3];
+        Random num114 = new Random();
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                matrix114[i, j] = num114.Next(-100, 100);
+                Console.Write(matrix114[i, j] + "\t114");
+            }
+            Console.WriteLine();
+        }
+        for (int j = 0; j < 3; j++)
+        {
+            int count114 = 0;
+            for (int i = 0; i < 4; i++)
+            {
+                if (matrix114[i, j] < 0)
+                {
+                    count114++;
+                    array114[j] = count114;
+                }
+            }
+        }
+        Console.WriteLine("Получившийся массив: ");
+        for (int i = 0; i < 3; i++)
+        {
+            Console.Write(array114[i] + " ");
+        }
+        //1 уровень 18 задача
+        Console.WriteLine("Введите n: ");
+        int n = int.Parse(Console.ReadLine());
+        Console.WriteLine("Введите m: ");
+        int m = int.Parse(Console.ReadLine());
+        if (n > 0 && m > 0)
+        {
+            int[,] d = new int[n, m];
+            Random random118 = new Random();
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < m; j++)
+                {
+                    d[i, j] = random118.Next(-100, 100);
+                }
+            }
+            Console.WriteLine("Исходная матрица D:");
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < m; j++)
+                {
+                    Console.Write(d[i, j] + "\t118");
+                }
+                Console.WriteLine();
+            }
+            for (int i = 0; i < n; i++)
+            {
+                int max118 = -1;
+                int j1 = -1;
+                int j2 = -1;
+                bool f = true;
+                for (int j = 0; j < m; j++)
+                {
+                    if (d[i, j] < 0)
+                    {
+                        f = false;
+                        j2 = j;
+                    }
+                    if (d[i, j] > max118 & f == true)
+                    {
+                        max118 = d[i, j];
+                        j1 = j;
+                    }
+                }
+                if (j1 != -1 & j2 != -1)
+                {
+                    int t118 = d[i, j1];
+                    d[i, j1] = d[i, j2];
+                    d[i, j2] = t118;
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("Получившаяся матрица: ");
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < m; j++)
+                {
+                    Console.Write("{0:d} ", d[i, j]);
+                }
+                Console.WriteLine();
+            }
+        }
+        else
+        {
+            Console.WriteLine("В матрице 0 элементов, дальнейшие действия невозможны");
+        }
+        //1 уровень 22 задача
+        double[,] z122 = new double[6, 8];
+        Random random122 = new Random();
+        for (int i = 0; i < 6; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                z122[i, j] = random122.Next(-10, 100);
+            }
+        }
+        for (int i = 0; i < 6; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                Console.Write(z122[i, j] + "\t122");
+            }
+            Console.WriteLine();
+        }
+        double sum122 = 0;
+        int t122 = 0;
+        for (int i = 0; i < 6; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                if (z122[i, j] > 0)
+                {
+                    sum122 += z122[i, j];
+                    t122 += 1;
+                    
+                }
+            }
+        }
+        double sr122 = sum122 / t122;
+        Console.WriteLine("Среднее арифметическое матрицы: ");
+        Console.WriteLine(sr122);
+        double max122 = z122[0, 0];
+        for (int i = 0; i < 6; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                if (z122[i, j] > max122)
+                {
+                    max122 = z122[i, j];
+                }
+            }
+        }
+        Console.WriteLine("Максимальный элемент матрицы:");
+        Console.WriteLine(max122);
+        for (int i = 0; i < 6; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                if (z122[i, j] == max122)
+                {
+                    z122[i, j] = sr122;
+                }
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine("Получившаяся матрица: ");
+        for (int i = 0; i < 6; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                Console.Write("{0:f2}\t122", z122[i, j]);
+            }
+            Console.WriteLine();
+        }
+        //1 уровень 26 задача
+        int[,] matrix126 = new int[5, 7];
+        Random random126 = new Random();
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < 7; j++)
+            {
+                matrix126[i, j] = random126.Next(100);
+            }
+        }
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < 7; j++)
+            {
+                Console.Write(matrix126[i, j] + "\t122");
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine();
+        Console.WriteLine("Одномерный массив:");
+        //номер 26 часть 1
+        double[,] a = new double[3, 7];
+        double[] b = new double[7];
+        double max126 = -1 * Math.Pow(10, 100);
+        int im = -1, cnt = 0;
+        for (int i = 0; i < a.GetLength(0); i++)
+        {
+            for (int j = 0; j < a.GetLength(1); j++)
+            {
+                Console.WriteLine("a[" + i + "," + j + "]");
+                a[i, j] = Double.Parse(Console.ReadLine());
+            }
+            if (a[i, 5] > max126)
+            {
+                max126 = a[i, 5];
+                im = i;
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine();
+        for (int i = 0; i < a.GetLength(1); i++)
+        {
+            Console.WriteLine("b[" + i + "]");
+            b[i] = Double.Parse(Console.ReadLine());
+            a[im, i] = b[i];
+        }
+        Console.WriteLine();
+        for (int i = 0; i < a.GetLength(0); i++)
+        {
+            for (int j = 0; j < a.GetLength(1); j++)
+            {
+                Console.Write(a[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+        //1 уровень 30 задача
+        int[,] array130 = new int[5, 5];
+        Random num130 = new Random();
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < 5; j++)
+            {
+                array130[i, j] = num130.Next(-100, 100);
+            }
+        }
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < 5; j++)
+            {
+                Console.Write(array130[i, j] + "\t130");
+            }
+            Console.WriteLine();
+        }
+        int amax130 = array130[0, 0];
+        int imax130 = 0;
+        for (int i = 0; i < 5; i++)
+        {
+            if (array130[i, i] > amax130)
+            {
+                amax130 = array130[i, i];
+                imax130 = i;
+            }
+        }
+        Console.WriteLine("Максимальный элемент главной диагонали матрицы:");
+        Console.WriteLine(amax130);
+        int imax1130 = -1;
+        for (int i = 0; i < 5; i++)
+        {
+            if (array130[i, 2] < 0)
+            {
+                imax1130 = i;
+                break;
+            }
+        }
+        if (imax130 != -1 && imax1130 != -1)
+        {
+            for (int j = 0; j < 5; j++)
+            {
+                int t130 = array130[imax130, j];
+                array130[imax130, j] = array130[imax1130, j];
+                array130[imax1130, j] = t130;
+            }
+        }
+        Console.WriteLine("Матрица после замены строк:");
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < 5; j++)
+            {
+                Console.Write("{0:d} ", array130[i, j]);
+            }
+            Console.WriteLine();
+        }
+        //2 уровень 1 задача
+        int[,] matrix21 = new int[5, 7];
+        Random num21 = new Random();
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < 7; j++)
+            {
+                matrix21[i, j] = num21.Next(100);
+            }
+        }
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < 7; j++)
+            {
+                Console.Write(matrix21[i, j] + "\t21");
+            }
+            Console.WriteLine();
+        }
+        for (int i = 0; i < 5; i++)
+        {
+            int max21 = matrix21[i, 0];
+            int maxIndex21 = 0;
+            for (int j = 1; j < 7; j++)
+            {
+                if (matrix21[i, j] > max21)
+                {
+                    max21 = matrix21[i, j];
+                    maxIndex21 = j;
+                }
+            }
+            if (maxIndex21 > 0 && maxIndex21 < 6)
+            {
+                if (matrix21[i, maxIndex21 - 1] < matrix21[i, maxIndex21 + 1])
+                {
+                    matrix21[i, maxIndex21 - 1] *= 2;
+                }
+                else
+                {
+                    matrix21[i, maxIndex21 + 1] *= 2;
+                }
+            }
+            else if (maxIndex21 == 0)
+            {
+                matrix21[i, maxIndex21 + 1] *= 2;
+            }
+            else
+            {
+                matrix21[i, maxIndex21 - 1] *= 2;
+            }
+        }
+        Console.WriteLine("Матрица A после обработки:");
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < 7; j++)
+            {
+                Console.Write(matrix21[i, j] + "\t21");
+            }
+            Console.WriteLine();
+        }
+        //2 уровень 5 задача
+        int[,] matrix25 = new int[7, 5];
+        Random num25 = new Random();
+        for (int i = 0; i < 7; i++)
+        {
+            for (int j = 0; j < 5; j++)
+            {
+                matrix25[i, j] = num25.Next(100);
+            }
+        }
+        for (int i = 0; i < 7; i++)
+        {
+            for (int j = 0; j < 5; j++)
+            {
+                Console.Write(matrix25[i, j] + "\t25");
+            }
+            Console.WriteLine();
+        }
+        for (int i = 0; i < 5; i++)
+        {
+            int maxRowIndex = 0;
+            int maxElement = matrix25[0, i];
+            for (int j = 0; j < 7; j++)
+            {
+                if (matrix25[j, i] > maxElement)
+                {
+                    maxElement = matrix25[j, i];
+                    maxRowIndex = j;
+                }
+            }
+            Console.WriteLine($"Максимальный элемент в столбце {i}: {maxElement}");
+            int halfSum = (matrix25[0, i] + matrix25[6, i]) / 2;
+            if (maxElement < halfSum)
+            {
+                matrix25[maxRowIndex, i] = halfSum;
+            }
+            else
+            {
+                matrix25[maxRowIndex, i] = i;
+            }
+            Console.WriteLine("полусумма:");
+            Console.WriteLine(halfSum);
+        }
+        Console.WriteLine("Матрица A после обработки:");
+        for (int i = 0; i < 7; i++)
+        {
+            for (int j = 0; j < 5; j++)
+            {
+                Console.Write(matrix25[i, j] + "\t125");
+            }
+            Console.WriteLine();
+        }
+        //2 уровень 9 задача
+        int[,] matrix29 = new int[6, 7];
+        Random num29 = new Random();
+        for (int i = 0; i < 6; i++)
+        {
+            for (int j = 0; j < 7; j++)
+            {
+                matrix29[i, j] = num29.Next(100);
+            }
+        }
+        for (int i = 0; i < 6; i++)
+        {
+            for (int j = 0; j < 7; j++)
+            {
+                Console.Write(matrix29[i, j] + "\t130");
+            }
+            Console.WriteLine();
+        }
+        for (int i = 0; i < 6; i++)
+        {
+            int array29 = 0;
+            int e = 6;
+            while (array29 < e)
+            {
+                int temp29 = matrix29[i, array29];
+                matrix29[i, array29] = matrix29[i, e];
+                matrix29[i, e] = temp29;
+                array29++;
+                e--;
+            }
+        }
+        Console.WriteLine("Матрица A после обработки:");
+        for (int i = 0; i < 6; i++)
+        {
+            for (int j = 0; j < 7; j++)
+            {
+                Console.Write(matrix29[i, j] + "\t130");
+            }
+            Console.WriteLine();
+        }
+        //3 уровень 1 задача
+       	Console.WriteLine("Введите кол строк :");
+        int line31 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Введите кол столбцов:");
+        int colum31 = Convert.ToInt32(Console.ReadLine());
+        int[,] matrix31 = new int[line31, colum31];
+        for (int i = 0; i < line31; i++)
+        {
+            for (int j = 0; j < colum31; j++)
+            {
+                Console.Write($"Введите элемент матрицы [{i}, {j}]: ");
+                matrix31[i, j] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+        int[] min_elements_list = new int[line31];
+        for (int i = 0; i < line31; i++)
+        {
+            int min_number = matrix31[i, 0];
+            for (int j = 1; j < colum31; j++)
+            {
+                if (matrix31[i, j] < min_number)
+                {
+                    min_number = matrix31[i, j];
+                }
+            }
+            min_elements_list[i] = min_number;
+        }
+        for (int i = 0; i < line31; i++)
+        {
+            for (int j = i + 1; j < line31; j++)
+            {
+                if (min_elements_list[j] > min_elements_list[i])
+                {
+                    int c = min_elements_list[i];
+                    min_elements_list[i] = min_elements_list[j];
+                    min_elements_list[j] = c;
+
+                    for (int k = 0; k < colum31; k++)
+                    {
+                        c = matrix31[i, k];
+                        matrix31[i, k] = matrix31[j, k];
+                        matrix31[j, k] = c;
+                    }
+                }
+            }
+        }
+
+        for (int i = 0; i < line31; i++)
+        {
+            for (int j = 0; j < colum31; j++)
+            {
+                Console.Write($"{matrix31[i, j]} ");
+            }
+            Console.WriteLine();
+        }
+        Console.ReadKey();
+        //3 уровень 3 задача
+                Console.WriteLine("Введите количество строк и столбцов в матрице");
+        int number33 = Convert.ToInt32(Console.ReadLine());
+        double[,] matrix33 = new double[number33, number33];
+        double[] list33 = new double[2 * number33 - 1];
+        double sum33 = 0;
+
+        for (int i = 0; i < number33; i++)
+        {
+            for (int j = 0; j < number33; j++)
+            {
+                Console.WriteLine($"Введите элемент матрицы [{i}, {j}]");
+                matrix33[i, j] = Convert.ToDouble(Console.ReadLine());
+            }
+        }
+
+        int index33 = 0;
+        for (int i = number33 - 1; i > -1; i--)
+        {
+            for (int j = 0; j < number33 - i; j++)
+            {
+                sum33 += matrix33[i + j, j];
+            }
+            list33[index33] = sum33;
+            index33 += 1;
+            sum33 = 0;
+        }
+        for (int j = 1; j < number33; j++)
+        {
+            for (int i = 0; i < number33 - j; i++)
+            {
+                sum33 += matrix33[i, j + i];
+            }
+            list33[index33] = sum33;
+            index33 += 1;
+            sum33 = 0;
+        }
+        for (int i = 0; i < 2 * number33 - 1; i++)
+        {
+            Console.Write($"{list33[i]} ");
+        }
+        Console.ReadKey();
+
+
+    }
+}
