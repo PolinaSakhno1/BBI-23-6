@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfRun_100m xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Run_100m>
+    <Surname>Лаврова</Surname>
+    <Group>Группа 2</Group>
+    <TeacherSurname>Тренер Максимова</TeacherSurname>
+    <Result>7</Result>
+  </Run_100m>
+  <Run_100m>
+    <Surname>Чуганина</Surname>
+    <Group>Группа 3</Group>
+    <TeacherSurname>Тренер Сенева</TeacherSurname>
+    <Result>8</Result>
+  </Run_100m>
+  <Run_100m>
+    <Surname>Баринова</Surname>
+    <Group>Группа 1</Group>
+    <TeacherSurname>Тренер Вмкторова</TeacherSurname>
+    <Result>11</Result>
+  </Run_100m>
+  <Run_100m>
+    <Surname>Нагиева</Surname>
+    <Group>Группа 1</Group>
+    <TeacherSurname>Тренер Дмитриева</TeacherSurname>
+    <Result>13</Result>
+  </Run_100m>
+</ArrayOfRun_100m>

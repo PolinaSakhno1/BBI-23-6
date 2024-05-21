@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTeam xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Team xsi:type="WomenTeam">
+    <Name>3 женская</Name>
+    <Scored>23</Scored>
+    <Missed>9</Missed>
+    <Points>9</Points>
+  </Team>
+  <Team xsi:type="MenTeam">
+    <Name>3 мужская</Name>
+    <Scored>16</Scored>
+    <Missed>11</Missed>
+    <Points>7</Points>
+  </Team>
+  <Team xsi:type="MenTeam">
+    <Name>1 мужская</Name>
+    <Scored>19</Scored>
+    <Missed>12</Missed>
+    <Points>6</Points>
+  </Team>
+  <Team xsi:type="WomenTeam">
+    <Name>2 женская</Name>
+    <Scored>17</Scored>
+    <Missed>11</Missed>
+    <Points>6</Points>
+  </Team>
+  <Team xsi:type="MenTeam">
+    <Name>4 мужская</Name>
+    <Scored>16</Scored>
+    <Missed>11</Missed>
+    <Points>4</Points>
+  </Team>
+  <Team xsi:type="WomenTeam">
+    <Name>1 женская</Name>
+    <Scored>14</Scored>
+    <Missed>17</Missed>
+    <Points>3</Points>
+  </Team>
+  <Team xsi:type="MenTeam">
+    <Name>2 мужская</Name>
+    <Scored>3</Scored>
+    <Missed>20</Missed>
+    <Points>0</Points>
+  </Team>
+  <Team xsi:type="WomenTeam">
+    <Name>4 женская</Name>
+    <Scored>8</Scored>
+    <Missed>25</Missed>
+    <Points>0</Points>
+  </Team>
+</ArrayOfTeam>

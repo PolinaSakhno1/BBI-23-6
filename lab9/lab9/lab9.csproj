@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="files\binary_files\" />
+      <Folder Include="files\json_files\" />
+      <Folder Include="files\xml_files\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="protobuf-net" Version="3.2.30" />
+    </ItemGroup>
+
+</Project>
