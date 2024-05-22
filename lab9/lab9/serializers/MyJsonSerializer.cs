@@ -14,7 +14,7 @@ public class MyJsonSerializer<T> : MySerializer<T> where T : class // показ
 
     public override void Write(T t, string filename)
     {
-        using (FileStream fs = new FileStream(filename, FileMode.OpenOrCreate))
+        using (FileStream fs = new FileStream(filename, FileMode.Create))
         {
             JsonSerializer.Serialize(fs, t);
         }
