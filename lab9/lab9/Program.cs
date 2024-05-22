@@ -352,8 +352,8 @@ public class Program
 
 
         string dirBinary = "C:/Users/Сахно Полина/Source/Repos/lab9/lab9/files/binary_files/";
-        string dirJson = "C:/Users/Сахно Полина/Source/Repos/lab9/lab9/files/json_files/Jump3.json";
-        string dirXml = "C:/Users/Сахно Полина/Source/Repos/lab9/lab9/files/xml_files/Jump3.xml";
+        string dirJson = "C:/Users/Сахно Полина/Source/Repos/lab9/lab9/files/json_files/";
+        string dirXml = "C:/Users/Сахно Полина/Source/Repos/lab9/lab9/files/xml_files/";
         string filename1Bin = "run_500.bin";
         string filename1Json = "run_500.json";
         string filename1Xml = "run_500.xml";
