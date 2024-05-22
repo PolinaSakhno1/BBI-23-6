@@ -16,7 +16,7 @@ public class MyBinarySerializer<T> : MySerializer<T> where T : class // пока
     public override void Write(T t, string filename)
     {
         XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
-        using (FileStream fs = new FileStream(filename, FileMode.OpenOrCreate))
+        using (FileStream fs = new FileStream(filename, FileMode.Create))
         {
             xmlSerializer.Serialize(fs, t);
         }
